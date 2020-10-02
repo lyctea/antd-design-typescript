@@ -42,3 +42,36 @@ class Cat extends Animal {
 
 const maomao = new Cat('maomap')
 console.log(maomao.run())
+
+
+/**
+ * 类和接口的应用
+ */
+
+interface Raiod {
+    switchRadio(): void
+}
+
+// 继承的接口
+interface RadiosWithBattery extends Raiod {
+    checkBatteryStatus()
+}
+
+
+
+class Car implements Raiod {
+    switchRadio() {
+
+    }
+}
+
+// 需要同时实现 switchRadio、checkBatteryStatus
+class CellPhone implements RadiosWithBattery {
+    switchRadio() {
+
+    }
+
+    checkBatteryStatus() {
+
+    }
+}
