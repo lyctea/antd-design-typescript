@@ -1,3 +1,6 @@
+jQuery('#foo')
+
+
 // 类型别名,在联合类型中使用
 type PlusType = (x: number, y: number) => number
 function sum(x: number, y: number): number {
