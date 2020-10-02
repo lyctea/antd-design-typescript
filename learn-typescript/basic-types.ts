@@ -21,7 +21,17 @@ notSure.myName
 notSure.getName()
 
 // 联合类型
-let  numberOrString: number | string
+let numberOrString: number | string
 numberOrString = 123
 numberOrString = '123'
 // numberOrString = true error
+
+let arrOfNumbers: number[] = [1, 2, 3, 4]
+arrOfNumbers.push(3)
+
+function test() {
+    // arguments.forEach()
+}
+
+let user: [string, number] = ['viking', 1]
+user = ['mooo', 1]
