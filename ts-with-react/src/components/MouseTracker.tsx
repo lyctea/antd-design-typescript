@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import useMousePosition from "../hooks/useMousePosition";
+
 
 const MouseTracker: React.FC = () => {
   const [positions, setPositions] = useState({ x: 0, y: 0 });

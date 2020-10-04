@@ -1,28 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import MouseTracker from './components/MouseTracker';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import useMousePosition from "./hooks/useMousePosition";
+import LikeButton from "./components/LikeButton";
 
-function App() {
+const App: React.FC = () => {
+  const positions = useMousePosition();
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          X: {positions.x}, Y: {positions.y}
         </p>
-        <MouseTracker />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <LikeButton  />
       </header>
     </div>
   );
-}
+};
 
 export default App;
