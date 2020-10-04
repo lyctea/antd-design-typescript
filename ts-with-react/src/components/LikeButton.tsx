@@ -6,7 +6,7 @@ const LikeButton: React.FC = () => {
 
   useEffect(() => {
     document.title = `点击了${like}次`
-  })
+  }, [like]) //只有like改变的时候才会触发effect
 
   return (
     <>
