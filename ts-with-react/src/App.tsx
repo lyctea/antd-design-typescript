@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import useURLLoader from "./hooks/useURLLoader";
+import LikeButton from "./components/LikeButton";
 
 interface IShowResult {
   message: string;
@@ -20,6 +21,7 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <LikeButton/>
         <p>
           <button
             onClick={() => {
