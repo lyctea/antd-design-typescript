@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import useMousePosition from "./hooks/useMousePosition";
-import LikeButton from "./components/LikeButton";
+import useURLLoader from "./hooks/useURLLoader";
+
+interface IShowResult {
+  message: string;
+  status: string;
+}
 
 const App: React.FC = () => {
-  const positions = useMousePosition();
+  const [show, setShow] = useState(true);
+  const [
+    data,
+    loading,
+  ] = useURLLoader("https://dog.ceo/api/breeds/image/random", [show]);
+  const dogRes = data as IShowResult;
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          X: {positions.x}, Y: {positions.y}
+          <button
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            Refresh dog photo
+          </button>
         </p>
-        <LikeButton  />
+        {loading ? <p>loading...</p> : <img src={dogRes && dogRes.message} />}
       </header>
     </div>
   );
