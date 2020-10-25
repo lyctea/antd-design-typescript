@@ -7,7 +7,8 @@ const App: React.FC = () => {
       <header className="App-header">
         <Button disabled>Hello</Button>
         <Button disabled btnType={ButtonType.Primary} size={ButtonSize.Large}>Hello</Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com" size={ButtonSize.Small}>Hello</Button>
+        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>Hello</Button>
+        <Button btnType={ButtonType.Link} href="http://www.baidu.com" target="_blank" size={ButtonSize.Small}>Hello</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
